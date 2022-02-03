@@ -24,3 +24,10 @@ export async function getMovies() {
   return checkError(response);
 }
 
+export async function getSportsTeams() {
+  const response = await client
+    .from('Favorite Sports Teams')
+    .select();
+    
+  return checkError(response);
+}

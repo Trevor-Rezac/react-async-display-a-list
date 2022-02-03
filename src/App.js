@@ -1,7 +1,7 @@
 
 import './App.css';
 import { useState, useEffect } from 'react';
-import { getCardDesigners, getCars, getMovies } from './services/fetch-utils.js';
+import { getCardDesigners, getCars, getMovies, getSportsTeams } from './services/fetch-utils.js';
 import DesignerList from './DesignerList';
 import CarList from './CarList';
 import MovieList from './MovieList';
@@ -14,9 +14,11 @@ function App() {
   const [isCarsLoading, setIsCarsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [isMoviesLoading, setIsMoviesLoading] = useState(false);
+  const [sportsTeams, setSportsTeams] = useState([]);
+  const [isTeamsLoading, setIsTeamsLoading] = useState(false);
 
   
-  console.log('||', movies);
+  console.log('||', sportsTeams);
 
   async function fetchDesignersData() {
     setIsDesignersLoading(true);
@@ -45,10 +47,20 @@ function App() {
     setMovies(data);
   }
 
+  async function fetchTeamData() {
+    setIsTeamsLoading(true);
+
+    const data = await getSportsTeams();
+
+    setIsTeamsLoading(false);
+    setSportsTeams(data);
+  }
+
   useEffect(() => {
     fetchDesignersData();
     fetchCarData();
     fetchMovieData();
+    fetchTeamData();
   }, []);
 
 
