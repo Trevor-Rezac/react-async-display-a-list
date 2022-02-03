@@ -1,7 +1,5 @@
 
 import './App.css';
-import { useState, useEffect } from 'react';
-import { getCardDesigners, getCars, getMovies, getSportsTeams } from './services/fetch-utils.js';
 import DesignerList from './DesignerList';
 import CarList from './CarList';
 import MovieList from './MovieList';
