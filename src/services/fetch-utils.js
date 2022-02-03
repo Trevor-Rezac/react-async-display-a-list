@@ -16,3 +16,11 @@ export async function getCars() {
   return checkError(response);
 }
 
+export async function getMovies() {
+  const response = await client
+    .from('Favorite Movies')
+    .select();
+
+  return checkError(response);
+}
+
