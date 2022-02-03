@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.designer-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: dotted 2px black;
+}
+
+.designer-container {
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: lightgoldenrodyellow;
+  width: fit-content;
+  padding: 5px;
+  margin: 5px;
+}

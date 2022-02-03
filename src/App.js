@@ -2,7 +2,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { getCardDesigners } from './services/fetch-utils.js';
-import userEvent from '@testing-library/user-event';
+import DesignerList from './DesignerList';
+
 
 function App() {
   const [cardDesigners, setCardDesigners] = useState([]);
@@ -23,10 +24,10 @@ function App() {
     fetchDesignersData();
   }, []);
 
-  
+
   return (
     <div className="App">
-      <h1>LOREM IPSUM</h1>
+      <DesignerList cardDesigners={cardDesigners}/>
     </div>
   );
 }
