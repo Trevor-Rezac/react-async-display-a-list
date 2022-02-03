@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useState, useEffect } from 'react';
+import { getCardDesigners } from './services/fetch-utils.js';
+import userEvent from '@testing-library/user-event';
 
 function App() {
+  const [cardDesigners, setCardDesigners] = useState([]);
+  const [isDesignersLoading, setIsDesignersLoading] = useState(false);
+  
+  console.log('||', cardDesigners);
+
+  async function fetchDesignersData() {
+    setIsDesignersLoading(true);
+    
+    const data = await getCardDesigners();
+
+    setIsDesignersLoading(false);
+    setCardDesigners(data);
+  }
+
+  useEffect(() => {
+    fetchDesignersData();
+  }, []);
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>LOREM IPSUM</h1>
     </div>
   );
 }
