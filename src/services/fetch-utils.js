@@ -7,3 +7,12 @@ export async function getCardDesigners() {
 
   return checkError(response);
 }
+
+export async function getCars() {
+  const response = await client
+    .from('Cars')
+    .select();
+    
+  return checkError(response);
+}
+
