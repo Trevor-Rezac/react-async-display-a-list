@@ -37,7 +37,7 @@
   }
 }
 
-.designer-list, .car-list, .movie-list {
+.designer-list, .car-list, .movie-list, .teams-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,7 +55,7 @@
   margin: 5px;
 }
 
-.car-container, .movie-container {
+.car-container, .movie-container, .team-container {
   padding: .5rem;
   width: fit-content;
   margin: 5px;
@@ -65,4 +65,8 @@
 
 .movie-container {
   background-color: lightseagreen;
+}
+
+.team-container {
+  background-color: lightsteelblue;
 }

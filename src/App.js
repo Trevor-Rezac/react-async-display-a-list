@@ -5,6 +5,7 @@ import { getCardDesigners, getCars, getMovies, getSportsTeams } from './services
 import DesignerList from './DesignerList';
 import CarList from './CarList';
 import MovieList from './MovieList';
+import TeamsList from './TeamsList';
 
 
 function App() {
@@ -66,13 +67,13 @@ function App() {
 
   return (
     <div className="App">
-      {
-        isDesignersLoading ? <h2>LOADING</h2> : <DesignerList cardDesigners={cardDesigners}/>
-      }
+      { isDesignersLoading ? <h2>LOADING</h2> : <DesignerList cardDesigners={cardDesigners}/>}
 
       { isCarsLoading ? <h2>LOADING</h2> : <CarList cars={cars} />}
 
       { isMoviesLoading ? <h2>LOADING</h2> : <MovieList movies={movies} />}
+
+      { isTeamsLoading ? <h2>LOADING</h2> : <TeamsList sportsTeams={sportsTeams} />}
     </div>
   );
 }
