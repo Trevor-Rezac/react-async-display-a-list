@@ -18,8 +18,7 @@ function App() {
   const [sportsTeams, setSportsTeams] = useState([]);
   const [isTeamsLoading, setIsTeamsLoading] = useState(false);
 
-  
-  console.log('||', sportsTeams);
+  // console.log('||', sportsTeams);
 
   async function fetchDesignersData() {
     setIsDesignersLoading(true);
