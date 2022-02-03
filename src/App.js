@@ -27,7 +27,9 @@ function App() {
 
   return (
     <div className="App">
-      <DesignerList cardDesigners={cardDesigners}/>
+      {
+        isDesignersLoading ? <h2>LOADING</h2> : <DesignerList cardDesigners={cardDesigners}/>
+      }
     </div>
   );
 }
