@@ -37,7 +37,7 @@
   }
 }
 
-.designer-list {
+.designer-list, .car-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -53,4 +53,12 @@
   width: fit-content;
   padding: 5px;
   margin: 5px;
+}
+
+.car-container {
+  padding: 1.5rem;
+  width: fit-content;
+  margin: 5px;
+  border: solid 2px black;
+  border-radius: 5%;
 }

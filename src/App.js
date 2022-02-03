@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { getCardDesigners, getCars } from './services/fetch-utils.js';
 import DesignerList from './DesignerList';
+import CarList from './CarList';
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
       {
         isDesignersLoading ? <h2>LOADING</h2> : <DesignerList cardDesigners={cardDesigners}/>
       }
+
+      { isCarsLoading ? <h2>LOADING</h2> : <CarList cars={cars} />}
     </div>
   );
 }
