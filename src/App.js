@@ -6,63 +6,21 @@ import DesignerList from './DesignerList';
 import CarList from './CarList';
 import MovieList from './MovieList';
 import TeamsList from './TeamsList';
+import { useFetch } from './useFetch';
 
 
 function App() {
-  const [cardDesigners, setCardDesigners] = useState([]);
-  const [isDesignersLoading, setIsDesignersLoading] = useState(false);
-  const [cars, setCars] = useState([]);
-  const [isCarsLoading, setIsCarsLoading] = useState(false);
-  const [movies, setMovies] = useState([]);
-  const [isMoviesLoading, setIsMoviesLoading] = useState(false);
-  const [sportsTeams, setSportsTeams] = useState([]);
-  const [isTeamsLoading, setIsTeamsLoading] = useState(false);
 
-  // console.log('||', sportsTeams);
-
-  async function fetchDesignersData() {
-    setIsDesignersLoading(true);
-    
-    const data = await getCardDesigners();
-
-    setIsDesignersLoading(false);
-    setCardDesigners(data);
-  }
-
-  async function fetchCarData() {
-    setIsCarsLoading(true);
-
-    const data = await getCars();
-
-    setIsCarsLoading(false);
-    setCars(data);
-  }
-
-  async function fetchMovieData() {
-    setIsMoviesLoading(true);
-
-    const data = await getMovies();
-
-    setIsMoviesLoading(false);
-    setMovies(data);
-  }
-
-  async function fetchTeamData() {
-    setIsTeamsLoading(true);
-
-    const data = await getSportsTeams();
-
-    setIsTeamsLoading(false);
-    setSportsTeams(data);
-  }
-
-  useEffect(() => {
-    fetchDesignersData();
-    fetchCarData();
-    fetchMovieData();
-    fetchTeamData();
-  }, []);
-
+  const {
+    isDesignersLoading,
+    cardDesigners,
+    isCarsLoading,
+    cars,
+    isMoviesLoading,
+    movies,
+    isTeamsLoading,
+    sportsTeams
+  } = useFetch();
 
   return (
     <div className="App">
