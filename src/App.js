@@ -1,5 +1,6 @@
 
 import './App.css';
+import loadingBox from './loading-box.gif';
 import DesignerList from './DesignerList';
 import CarList from './CarList';
 import MovieList from './MovieList';
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      { isDesignersLoading ? <h2>LOADING</h2> : <DesignerList cardDesigners={cardDesigners}/>}
+      { isDesignersLoading ? <img src={loadingBox} /> : <DesignerList cardDesigners={cardDesigners}/>}
 
       { isCarsLoading ? <h2>LOADING</h2> : <CarList cars={cars} />}
 
